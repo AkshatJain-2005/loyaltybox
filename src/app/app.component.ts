@@ -4,8 +4,11 @@ import { Platform, MenuController, Nav } from 'ionic-angular';
 
 import { StatusBar, Splashscreen } from 'ionic-native';
 
-import { HelloIonicPage } from '../pages/hello-ionic/hello-ionic';
-import { ListPage } from '../pages/list/list';
+import { FbMediaPage  } from '../pages/fb-media/fb-media';
+import { LendingPage   } from '../pages/lending/lending';
+import { NotificationPage  } from '../pages/notification/notification';
+import {RedemptionPage } from '../pages/redemption/redemption';
+import { RewardsPage} from '../pages/rewards/rewards';
 
 
 @Component({
@@ -15,8 +18,8 @@ export class MyApp {
   @ViewChild(Nav) nav: Nav;
 
   // make HelloIonicPage the root (or first) page
-  rootPage: any = HelloIonicPage;
-  pages: Array<{title: string, component: any}>;
+  rootPage: any = LendingPage;
+  pages: Array<{title: string, component: any,icon: string}>;
 
   constructor(
     public platform: Platform,
@@ -26,8 +29,12 @@ export class MyApp {
 
     // set our app's pages
     this.pages = [
-      { title: 'Hello Ionic', component: HelloIonicPage },
-      { title: 'My First List', component: ListPage }
+      { title: 'Home', component: LendingPage, icon :'' },
+      { title: 'rewards', component: RewardsPage, icon :''  }, 
+      { title: 'Notification',component: NotificationPage, icon :''  },
+      { title: 'Social Media',component: FbMediaPage, icon :''  },
+      { title: 'Reedemption',component: RedemptionPage, icon :''  }
+
     ];
   }
 
